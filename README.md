@@ -1,6 +1,6 @@
 # 📚 Libmanage - Library Management System
 
-A **Library Management System** built using **Django and MySQL** to efficiently manage book records and borrowing. This project is part of a machine test assignment for the Python Django Developer position at **Keywordio**.
+A simple web-based Library Management System built using Django, MySQL, HTML, CSS, and JavaScript for efficient book management and borrowing.
 
 ## 🚀 Features
 
