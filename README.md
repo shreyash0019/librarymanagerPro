@@ -5,13 +5,13 @@ A simple web-based **Library Management System** built using **Django, MySQL, HT
 ## 🚀 Features
 
 - 🔐 **User Authentication** – Separate login for students and admins  
-- 📖 **Book Management** – Admins can **add, edit, delete, and view books**  
+- 📚 **Book Management** – Admins can **add, edit, delete, and view books**  
 - 📚 **Borrowing System** – Students can **borrow and return books**  
 - 🎨 **Responsive UI** – Clean and user-friendly design  
-- 🗄️ **Database Integration** – Uses **MySQL** for data storage  
+- 🟢 **Database Integration** – Uses **MySQL** for data storage  
 - ⚡ **REST API Support** – Full CRUD operations with Django REST Framework  
 
-## 🛠️ Tech Stack
+## 🤍 Tech Stack
 
 - **Backend:** Django, Django REST Framework (DRF), Python  
 - **Frontend:** HTML, CSS, JavaScript  
@@ -94,15 +94,15 @@ http://127.0.0.1:8000/
 | `PUT` | `/api/borrowed-books/<id>/` | Update return status |
 | `DELETE` | `/api/borrowed-books/<id>/` | Delete a borrowed book record |
 
-
-
 ## 🎯 Future Improvements
 🚀 Add **pagination** in book listings  
 🚀 Implement **JWT authentication** for better security  
 🚀 Improve **book return tracking** with due dates  
 
-## 🛠 Contributing
+## ⚙️ Contributing
 Want to contribute? Feel free to **fork the repository**, create a new branch, and submit a **pull request (PR)**.  
 
-## 📜 License
-This project is **MIT licensed**.  
+## 🐝 License
+This project is licensed under the **MIT License**.  
+See the [LICENSE](https://github.com/shreyash0019/librarymanagerPro/blob/master/MIT%20License) file for details.
+
