@@ -1,71 +1,48 @@
 # 📚 Libmanage - Library Management System
 
-A simple web-based Library Management System built using Django, MySQL, HTML, CSS, and JavaScript for efficient book management and borrowing.
+A simple web-based **Library Management System** built using **Django, MySQL, HTML, CSS, and JavaScript** for efficient book management and borrowing.
 
 ## 🚀 Features
 
-### 🔐 Admin Operations
-- **Signup** – Create a new admin account (email must be unique)
-- **Login** – Admin login using email and password
-- **Book Management**
-  - **Create** – Add new books
-  - **Read** – Retrieve all books
-  - **Update** – Modify book details
-  - **Delete** – Remove a book record
+- 🔒 **User Authentication** – Separate login for students and admins  
+- 📚 **Book Management** – Admins can **add, edit, delete, and view books**  
+- 📚 **Borrowing System** – Students can **borrow and return books**  
+- 🎨 **Responsive UI** – Clean and user-friendly design  
+- 🟢 **Database Integration** – Uses **MySQL** for data storage  
+- ⚡ **REST API Support** – Full CRUD operations with Django REST Framework  
+- ✉️ **Unique Email for Admins** – Admin accounts require a **unique email** for security  
 
-### 📚 Student View
-- View the list of all books (read-only access)
+## 🛠️ Tech Stack
 
-### 🔧 Technical Specifications
-- **Framework:** Django (5.1.7)
-- **API:** Django REST Framework (DRF) for RESTful endpoints
-- **Database:** MySQL
-- **Authentication:** Token-based authentication for admin endpoints
-- **Error Handling:** Proper HTTP status codes and messages for invalid input
-- **Optional UI:** Django templates.
-
-## 📁 Project Structure
-```
-LibrarymanagerPro/
-│── library/                # Main Django app
-│   │── migrations/         # Database migrations
-│   │── models.py           # Database models
-│   │── serializers.py      # DRF serializers
-│   │── views.py            # API views
-│   │── urls.py             # URL routes
-│── librarymanagerpro.postman_collection.json  # API testing collection
-│── requirements.txt        # Python dependencies
-│── manage.py               # Django management script
-│── settings.py             # Project settings
-│── README.md               # Project documentation
-│── .hintrc                 # Linting configuration
-│── MIT License             # License file
-```
+- **Backend:** Django, Django REST Framework (DRF), Python  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Database:** MySQL  
+- **API Support:** Django REST Framework  
 
 ## ⚙️ Installation
 
-1️⃣ Clone the repository:
+1⃣ Clone the repository:
 ```sh
 git clone https://github.com/shreyash0019/librarymanagerPro.git
 ```
 
-2️⃣ Navigate to the project directory:
+2⃣ Navigate to the project directory:
 ```sh
 cd librarymanagerPro
 ```
 
-3️⃣ Create and activate a virtual environment:
+3⃣ Create and activate a virtual environment:
 ```sh
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
 
-4️⃣ Install dependencies:
+4⃣ Install dependencies:
 ```sh
 pip install -r requirements.txt
 ```
 
-5️⃣ Set up MySQL Database:
+5⃣ Set up MySQL Database:
 - Create a database (`library_db`)
 - Update **`settings.py`** with MySQL credentials:
   ```python
@@ -81,23 +58,25 @@ pip install -r requirements.txt
   }
   ```
 
-6️⃣ Apply database migrations:
+6⃣ Apply database migrations:
 ```sh
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-7️⃣ Create an admin user:
+7⃣ Create a superuser (admin) with a **unique email**:
 ```sh
 python manage.py createsuperuser
 ```
+- The system **enforces unique email IDs for admins**, preventing duplicate registrations.
+- If an email is already registered, an error will be shown.
 
-8️⃣ Run the development server:
+8⃣ Run the development server:
 ```sh
 python manage.py runserver
 ```
 
-9️⃣ Open the app in your browser:
+9⃣ Open the app in your browser:
 ```
 http://127.0.0.1:8000/
 ```
@@ -106,23 +85,31 @@ http://127.0.0.1:8000/
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `POST` | `/api/admin/signup/` | Register a new admin |
-| `POST` | `/api/admin/login/` | Admin login |
-| `POST` | `/api/books/` | Add a new book (Admin) |
 | `GET` | `/api/books/` | Get all books |
+| `POST` | `/api/books/` | Add a new book |
 | `GET` | `/api/books/<id>/` | Get book details |
-| `PUT` | `/api/books/<id>/` | Update book details (Admin) |
-| `DELETE` | `/api/books/<id>/` | Delete a book (Admin) |
+| `PUT` | `/api/books/<id>/` | Update book details |
+| `DELETE` | `/api/books/<id>/` | Delete a book |
+| `GET` | `/api/students/` | Get all students |
+| `POST` | `/api/students/` | Add a new student |
+| `GET` | `/api/borrowed-books/` | Get borrowed books |
+| `POST` | `/api/borrowed-books/` | Borrow a book |
+| `PUT` | `/api/borrowed-books/<id>/` | Update return status |
+| `DELETE` | `/api/borrowed-books/<id>/` | Delete a borrowed book record |
+
+## ✉️ Unique Email Requirement for Admins
+- Admin accounts **must have a unique email** when registering.  
+- This is enforced in the database to **avoid duplicate admin accounts**.  
+- If an admin tries to register with an existing email, an **error message** will be displayed.  
 
 ## 🎯 Future Improvements
-- 🔹 Implement **pagination** for book listings
-- 🔹 Add **JWT authentication**
-- 🔹 Track **book return dates** and notifications
+🚀 Add **pagination** in book listings  
+🚀 Implement **JWT authentication** for better security  
+🚀 Improve **book return tracking** with due dates  
 
-## 🤝 Contribution
-Fork the repository, create a new branch, and submit a **pull request (PR)**.
+## 🛠 Contributing
+Want to contribute? Feel free to **fork the repository**, create a new branch, and submit a **pull request (PR)**.  
 
-## 🛡️ License
-This project is licensed under the **MIT License**.
+## 🐝 License
+This project is **MIT licensed**.  
 See the [LICENSE](https://github.com/shreyash0019/librarymanagerPro/blob/master/MIT%20License) file for details.
-
