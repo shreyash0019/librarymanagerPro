@@ -26,7 +26,7 @@ A simple web-based Library Management System built using Django, MySQL, HTML, CS
 
 ## 📁 Project Structure
 ```
-Libmanage/
+LibrarymanagerPro/
 │── library/                # Main Django app
 │   │── migrations/         # Database migrations
 │   │── models.py           # Database models
