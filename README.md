@@ -17,12 +17,12 @@ A simple web-based Library Management System built using Django, MySQL, HTML, CS
 - View the list of all books (read-only access)
 
 ### 🔧 Technical Specifications
-- **Framework:** Django (Specify version)
+- **Framework:** Django (5.1.7)
 - **API:** Django REST Framework (DRF) for RESTful endpoints
 - **Database:** MySQL
 - **Authentication:** Token-based authentication for admin endpoints
 - **Error Handling:** Proper HTTP status codes and messages for invalid input
-- **Optional UI:** Django templates or any frontend framework (ReactJS, Angular)
+- **Optional UI:** Django templates.
 
 ## 📁 Project Structure
 ```
