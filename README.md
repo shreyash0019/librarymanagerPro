@@ -1,22 +1,46 @@
 # 📚 Libmanage - Library Management System
 
-A simple web-based **Library Management System** built using **Django, MySQL, HTML, CSS, and JavaScript** for efficient book management and borrowing.
+A **Library Management System** built using **Django and MySQL** to efficiently manage book records and borrowing. This project is part of a machine test assignment for the Python Django Developer position at **Keywordio**.
 
 ## 🚀 Features
 
-- 🔐 **User Authentication** – Separate login for students and admins  
-- 📚 **Book Management** – Admins can **add, edit, delete, and view books**  
-- 📚 **Borrowing System** – Students can **borrow and return books**  
-- 🎨 **Responsive UI** – Clean and user-friendly design  
-- 🟢 **Database Integration** – Uses **MySQL** for data storage  
-- ⚡ **REST API Support** – Full CRUD operations with Django REST Framework  
+### 🔐 Admin Operations
+- **Signup** – Create a new admin account (email must be unique)
+- **Login** – Admin login using email and password
+- **Book Management**
+  - **Create** – Add new books
+  - **Read** – Retrieve all books
+  - **Update** – Modify book details
+  - **Delete** – Remove a book record
 
-## 🤍 Tech Stack
+### 📚 Student View
+- View the list of all books (read-only access)
 
-- **Backend:** Django, Django REST Framework (DRF), Python  
-- **Frontend:** HTML, CSS, JavaScript  
-- **Database:** MySQL  
-- **API Support:** Django REST Framework  
+### 🔧 Technical Specifications
+- **Framework:** Django (Specify version)
+- **API:** Django REST Framework (DRF) for RESTful endpoints
+- **Database:** MySQL
+- **Authentication:** Token-based authentication for admin endpoints
+- **Error Handling:** Proper HTTP status codes and messages for invalid input
+- **Optional UI:** Django templates or any frontend framework (ReactJS, Angular)
+
+## 📁 Project Structure
+```
+Libmanage/
+│── library/                # Main Django app
+│   │── migrations/         # Database migrations
+│   │── models.py           # Database models
+│   │── serializers.py      # DRF serializers
+│   │── views.py            # API views
+│   │── urls.py             # URL routes
+│── librarymanagerpro.postman_collection.json  # API testing collection
+│── requirements.txt        # Python dependencies
+│── manage.py               # Django management script
+│── settings.py             # Project settings
+│── README.md               # Project documentation
+│── .hintrc                 # Linting configuration
+│── MIT License             # License file
+```
 
 ## ⚙️ Installation
 
@@ -63,7 +87,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-7️⃣ Create a superuser (admin):
+7️⃣ Create an admin user:
 ```sh
 python manage.py createsuperuser
 ```
@@ -82,27 +106,23 @@ http://127.0.0.1:8000/
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
+| `POST` | `/api/admin/signup/` | Register a new admin |
+| `POST` | `/api/admin/login/` | Admin login |
+| `POST` | `/api/books/` | Add a new book (Admin) |
 | `GET` | `/api/books/` | Get all books |
-| `POST` | `/api/books/` | Add a new book |
 | `GET` | `/api/books/<id>/` | Get book details |
-| `PUT` | `/api/books/<id>/` | Update book details |
-| `DELETE` | `/api/books/<id>/` | Delete a book |
-| `GET` | `/api/students/` | Get all students |
-| `POST` | `/api/students/` | Add a new student |
-| `GET` | `/api/borrowed-books/` | Get borrowed books |
-| `POST` | `/api/borrowed-books/` | Borrow a book |
-| `PUT` | `/api/borrowed-books/<id>/` | Update return status |
-| `DELETE` | `/api/borrowed-books/<id>/` | Delete a borrowed book record |
+| `PUT` | `/api/books/<id>/` | Update book details (Admin) |
+| `DELETE` | `/api/books/<id>/` | Delete a book (Admin) |
 
 ## 🎯 Future Improvements
-🚀 Add **pagination** in book listings  
-🚀 Implement **JWT authentication** for better security  
-🚀 Improve **book return tracking** with due dates  
+- 🔹 Implement **pagination** for book listings
+- 🔹 Add **JWT authentication**
+- 🔹 Track **book return dates** and notifications
 
-## ⚙️ Contributing
-Want to contribute? Feel free to **fork the repository**, create a new branch, and submit a **pull request (PR)**.  
+## 🤝 Contribution
+Fork the repository, create a new branch, and submit a **pull request (PR)**.
 
-## 🐝 License
-This project is licensed under the **MIT License**.  
+## 🛡️ License
+This project is licensed under the **MIT License**.
 See the [LICENSE](https://github.com/shreyash0019/librarymanagerPro/blob/master/MIT%20License) file for details.
 
