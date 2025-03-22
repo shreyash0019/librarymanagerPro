@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Delete Book</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'images/background.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h2 {
+            color: #f1f1f1;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        form {
+            margin-bottom: 15px;
+        }
+
+        /* Buttons */
+        button {
+            font-size: 16px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        /* Delete Button - Red */
+        button[type="submit"] {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #c82333;
+        }
+
+        /* Cancel Button - Gray */
+        a button {
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+        }
+
+        a button:hover {
+            background-color: #5a6268;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Are you sure you want to delete "{{ book.name }}"?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">❌ Yes, Delete</button>
+    </form>
+    <a href="{% url 'admin_dashboard' %}"><button>Cancel</button></a>
+</body>
+</html>
