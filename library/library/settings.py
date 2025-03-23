@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'library.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'library_db',  # Replace with your DB name
-        'USER': 'root',        # Replace with your DB user
-        'PASSWORD': 'wackjack',# Replace with your DB password
-        'HOST': 'localhost',           # Change if using a remote DB
-        'PORT': '3306',                # Default MySQL port
+        'NAME': 'library_db',  
+        'USER': 'root',        
+        'PASSWORD': 'wackjack',
+        'HOST': 'localhost',           
+        'PORT': '3306',                
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
