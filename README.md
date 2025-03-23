@@ -102,10 +102,6 @@ http://127.0.0.1:8000/
 - This is enforced in the database to **avoid duplicate admin accounts**.  
 - If an admin tries to register with an existing email, an **error message** will be displayed.  
 
-## 🎯 Future Improvements
-🚀 Add **pagination** in book listings  
-🚀 Implement **JWT authentication** for better security  
-🚀 Improve **book return tracking** with due dates  
 
 ## 🛠 Contributing
 Want to contribute? Feel free to **fork the repository**, create a new branch, and submit a **pull request (PR)**.  
